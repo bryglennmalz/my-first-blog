@@ -1,5 +1,4 @@
-{% extends 'blog/base.html' %} {% load static %}
-
+{% load static %}
 <html>
   <head>
     <title>Django Girls blog</title>
@@ -18,30 +17,14 @@
     />
     <link rel="stylesheet" href="{% static 'css/blog.css' %}" />
   </head>
-
   <body>
     <div class="page-header">
       <h1><a href="/">Django Girls Blog</a></h1>
     </div>
-
     <div class="content container">
       <div class="row">
         <div class="col-md-8">
-          {% block content %} {% for post in posts %}
-          <div class="post">
-            <h2>
-              <a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a>
-            </h2>
-            <p>{{ post.text | linebreaksbr }}</p>
-            <small>
-              <div class="date">
-                <p>
-                  author: {{ post.author }} published: {{ post.create_date }}
-                </p>
-              </div>
-            </small>
-          </div>
-          {% endfor %} {% endblock %}
+          {% block content %} {% endblock %}
         </div>
       </div>
     </div>
